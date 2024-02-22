@@ -42,13 +42,20 @@ public class Movie {
         return genre;
     }
 
+    //title, director, year, isInColor, lengthInMinutes, genre
     @Override
     public String toString() {
         String result = "";
-        result += title + " " + director + " ";
+        result += "Title: " + title
+                +"ln"+ " Director: " + director
+                +"ln"+ " Year: " + year
+                +"ln"+ " Colored: " + isInColor
+                +"ln"+ " Length: " + lengthInMinutes
+                +"ln"+ " Genre: " + genre;
+        /*
         if (isInColor) {
-            result += "er i farve";
-        }
+            result += " Movie is in color.";
+    }*/
         return result;
     }
 }

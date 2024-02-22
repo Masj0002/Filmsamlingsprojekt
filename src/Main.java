@@ -10,12 +10,13 @@ public class Main {
         //Controller skal bruges før while-loopet ellers tilføjer man hele tiden en ny collection således at der ikke kan komme mere end 1 film i collection
 
 
-        int sentinel = 2;
+        int sentinel = 3;
         int userChoice = 0;
         while (userChoice != sentinel) {
             System.out.println("Welcome to the MovieCollection");
             System.out.println("1. Create Movie");
-            System.out.println("2. Stop");
+            System.out.println("2. Search For Movie");
+            System.out.println("3. Stop");
             userChoice = input.nextInt();
             if (userChoice == 1) {
 
@@ -42,8 +43,12 @@ public class Main {
                     System.out.println("want to add another type true, else false");
                     dummyVar = input.nextBoolean();
                 }
+            } else if (userChoice == 2){
+                System.out.println("Search for a Movie");
             }
         }
         System.out.println(film.listOfMovieTitles());
+        film.getList();
+
     }
 }

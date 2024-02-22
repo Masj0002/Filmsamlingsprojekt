@@ -11,15 +11,16 @@ public class Controller {
     public void addMovie(String title, String director, int year, boolean isInColor, int lengthInMinutes, String genre) {
         instanceMovieCollection.addMovie(title, director, year, isInColor, lengthInMinutes, genre);
 
-
     }
     public ArrayList<String> listOfMovieTitles(){
         return instanceMovieCollection.listOfMovieTitles();
     }
 
-
     public MovieCollection getInstanceMovieCollection() {
         return instanceMovieCollection;
+    }
+    public void getList(){
+        instanceMovieCollection.getList();
     }
 
 }
