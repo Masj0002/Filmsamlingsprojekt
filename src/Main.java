@@ -4,8 +4,12 @@ public class Main {
     public static void main(String[] args) {
 
         //Instance / Laver en ny film
-        MovieCollection film = new MovieCollection();
+        Controller film = new Controller();
         Scanner input = new Scanner(System.in);
+
+        //Controller skal bruges før while-loopet ellers tilføjer man hele tiden en ny collection således at der ikke kan komme mere end 1 film i collection
+
+
         int sentinel = 2;
         int userChoice = 0;
         while (userChoice != sentinel) {
@@ -22,22 +26,24 @@ public class Main {
                     String title = input.next();
                     System.out.println("Please type in who directed it");
                     String director = input.next();
-                    System.out.println("year");
+                    System.out.println("Please type in the year it was made");
                     int year = input.nextInt();
+
                     System.out.println("Are the movie in color (true) else (false)");
                     boolean IsInColor = input.nextBoolean();
+
                     System.out.println("How long is the movie in minutes");
                     int lengthInMinutes = input.nextInt();
                     System.out.println("what genre is it ?");
                     String genre = input.next();
                     film.addMovie(title, director, year, IsInColor, lengthInMinutes, genre);
-                    System.out.println("Movie was added to libary");
+                    System.out.println("Movie was added to library");
+
                     System.out.println("want to add another type true, else false");
-                    boolean dummyVarUpdate = input.nextBoolean();
-                    dummyVar = dummyVarUpdate;
+                    dummyVar = input.nextBoolean();
                 }
             }
         }
-        film.listOfMovies();
+        System.out.println(film.listOfMovieTitles());
     }
 }

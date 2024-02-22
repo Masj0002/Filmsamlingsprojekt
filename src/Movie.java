@@ -8,7 +8,7 @@ public class Movie {
     private String genre;
 
     //Metode / parameter
-    public Movie(String title, String director, int year, boolean isInColor, int lengthInMinutes, String genre){
+    public Movie(String title, String director, int year, boolean isInColor, int lengthInMinutes, String genre) {
         this.title = title;
         this.director = director;
         this.year = year;
@@ -16,23 +16,39 @@ public class Movie {
         this.lengthInMinutes = lengthInMinutes;
         this.genre = genre;
     }
+
     //GetterMetode /den returner over i MovieCollection
-    public String getTitle(){
+    public String getTitle() {
         return title;
     }
-    public String getDirector(){
+
+    public String getDirector() {
         return director;
     }
-    public int getYear(){
+
+    public int getYear() {
         return year;
     }
-    public boolean getIsInColor(){
+
+    public boolean getIsInColor() {
         return isInColor;
     }
-    public int getLengthInMinutes(){
+
+    public int getLengthInMinutes() {
         return lengthInMinutes;
     }
-    public String getGenre(){
+
+    public String getGenre() {
         return genre;
+    }
+
+    @Override
+    public String toString() {
+        String result = "";
+        result += title + " " + director + " ";
+        if (isInColor) {
+            result += "er i farve";
+        }
+        return result;
     }
 }
