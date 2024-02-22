@@ -1,17 +1,19 @@
+import java.util.ArrayList;
+
 public class MovieCollection {
-    private Movie[] MovieCollection;
-    int count = 0;
+    //private Movie[] MovieCollection;
+    private ArrayList<Movie> MovieCollection;
 
     public MovieCollection(){
-        this.MovieCollection = new Movie[5];
+        this.MovieCollection = new ArrayList<>();
     }
     public void addMovie(String title, String director, int year, boolean isInColor, int lengthInMinutes, String genre){
-        MovieCollection[count++] = new Movie(title, director, year, isInColor, lengthInMinutes, genre);
+       MovieCollection.add(new Movie(title, director, year, isInColor,lengthInMinutes, genre));
     }
-        public void listOfMovies(){
 
-        for(Movie movie : MovieCollection){
-            System.out.println(movie.getTitle());
+        public void listOfMovies(){
+        for (int i = 0; i <MovieCollection.size(); i++){
+            System.out.println(MovieCollection.get(i).getTitle());
         }
     }
 }
