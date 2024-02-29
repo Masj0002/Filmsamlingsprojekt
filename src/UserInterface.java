@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -5,6 +6,11 @@ public class UserInterface {
     Scanner input = new Scanner(System.in);
 
     public void startMenu() {
+
+        film.addMovie("DieHard","Lord Hard",2004, true, 20, "Action");
+        film.addMovie("Lovepotion","Jacob Clienton",1992, false, 32, "Drama");
+        film.addMovie("Shrek","hamder a", 2000,true,120,"horror");
+
         int sentinel = 5;
         int userChoice = 0;
         while (userChoice != sentinel) {
@@ -25,8 +31,8 @@ public class UserInterface {
             } else if (userChoice == 3) {
                 showMovieCollection();
                 returnToMenu();
-            } else if (userChoice == 4){
-
+            } else if (userChoice == 4) {
+                editMovie();
                 returnToMenu();
             }
         }
@@ -52,31 +58,29 @@ public class UserInterface {
         String genre = input.next();
         film.addMovie(title, director, year, IsInColor, lengthInMinutes, genre);
         System.out.println("Movie was added to library");
-
     }
 
     public void searchForMovie() {
         System.out.println("Search for a Movie");
         String stringToSearchFor = input.nextLine();
         stringToSearchFor = input.nextLine();
-        String searchResult = film.searhMovieTitle(stringToSearchFor);
+        /*Gammel kode
+        String searchResult = film.searchMovieTitle(stringToSearchFor);
+        System.out.println(searchResult);*/
+        ArrayList<Movie> searchResult = film.findTitle(stringToSearchFor);
         System.out.println(searchResult);
-
-        boolean dummyVar = false;
-        while (dummyVar) {
-            System.out.println("Do you want to edit the movie?");
-            dummyVar = input.next().equalsIgnoreCase("yes");
-            {
-                dummyVar = true;
-
-            }
-        }
     }
 
     public void showMovieCollection() {
         System.out.println(film.listOfMovieTitles());
     }
-    public void editMovie(){
+//User Story 8-9
+    public void editMovie() {
+        System.out.println("Which Movie would you like to edit?");
+        String stringToSearchFor = input.nextLine();
+        stringToSearchFor = input.nextLine();
+        ArrayList<Movie> searchResult = film.findTitle(stringToSearchFor);
+        System.out.println(searchResult);
 
     }
 

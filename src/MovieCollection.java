@@ -2,7 +2,10 @@ import java.util.ArrayList;
 
 public class MovieCollection {
     //private Movie[] MovieCollection;
-    private ArrayList<Movie> MovieCollection;
+    private final ArrayList<Movie> MovieCollection;
+
+    //laver en arraylist til søgemetode
+    public ArrayList<Movie> searchMatch = new ArrayList<>();
 
     public MovieCollection() {
         this.MovieCollection = new ArrayList<>();
@@ -28,23 +31,27 @@ public class MovieCollection {
 
         }
     }
-// finder en film
-    public String searchMovieTitle(String title) {
-        StringBuilder searchResults = new StringBuilder();
-        for (Movie movie : MovieCollection) {
-
-            if (movie.getTitle().toLowerCase().contains(title.toLowerCase())) {
-                searchResults.append(movie.toString());
+    public ArrayList<Movie> searchMovie(String title) {
+        for (Movie movies : MovieCollection) {
+            if (movies.getTitle().toLowerCase().contains(title.toLowerCase())) {
+                searchMatch.add(movies);
             }
         }
-        return searchResults.toString();
+        return searchMatch;
     }
-    public void updateMovie(String updateMovie){
-
-        //tænk searchmetode sammen med 1.find film. 2. bliv spurgt om du ville ændre den. 3. ændre den
-    }
-
 }
 
+
+ /* //Gammel Kode
+        // finder en film
+        public String searchMovieTitle(String title) {
+            StringBuilder searchResults = new StringBuilder();
+            for (Movie movie : MovieCollection) {
+
+                if (movie.getTitle().toLowerCase().contains(title.toLowerCase())) {
+                    searchResults.append(movie);
+                }
+            }
+            return searchResults.toString();*/
 
 

@@ -23,8 +23,16 @@ public class Controller {
     public void getList(){
         instanceMovieCollection.getList();
     }
+    //finder titlen brugeren søger på
+    public ArrayList<Movie> findTitle(String title){
+        return instanceMovieCollection.searchMovie(title);
+    }
+}
+
+
+
+/* //Gammel Kode
     //User Story 5 search
     public String searhMovieTitle(String search){
         return instanceMovieCollection.searchMovieTitle(search);
-    }
-}
+    }*/
