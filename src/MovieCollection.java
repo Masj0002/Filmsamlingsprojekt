@@ -28,16 +28,20 @@ public class MovieCollection {
 
         }
     }
-
-    public ArrayList<Movie> searchMovieTitle(String title) {
-        ArrayList<Movie> searchResults = new ArrayList<>();
+// finder en film
+    public String searchMovieTitle(String title) {
+        StringBuilder searchResults = new StringBuilder();
         for (Movie movie : MovieCollection) {
 
             if (movie.getTitle().toLowerCase().contains(title.toLowerCase())) {
-                searchResults.add(movie);
+                searchResults.append(movie.toString());
             }
         }
-        return searchResults;
+        return searchResults.toString();
+    }
+    public void updateMovie(String updateMovie){
+
+        //tænk searchmetode sammen med 1.find film. 2. bliv spurgt om du ville ændre den. 3. ændre den
     }
 
 }

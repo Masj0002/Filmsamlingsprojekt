@@ -42,20 +42,41 @@ public class Movie {
         return genre;
     }
 
+    //Setter metode
+    public void setTitle(String setTitle) {
+        this.title = setTitle;
+    }
+
+    public void setDirector(String setDirector) {
+        this.director = setDirector;
+    }
+
+    public void setYear(int setyear) {
+        this.year = setyear;
+    }
+
+    public void setIsInColor(boolean setisInColor) {
+        this.isInColor = setisInColor;
+    }
+
+    public void setLengthInMinutes(int setLengthInMinutes) {
+        this.lengthInMinutes = setLengthInMinutes;
+    }
+
+    public void setGenre(String setGenre) {
+        this.genre = setGenre;
+    }
+
     //title, director, year, isInColor, lengthInMinutes, genre
     @Override
     public String toString() {
         String result = "";
         result += "Title: " + title
-                +"ln"+ " Director: " + director
-                +"ln"+ " Year: " + year
-                +"ln"+ " Colored: " + isInColor
-                +"ln"+ " Length: " + lengthInMinutes
-                +"ln"+ " Genre: " + genre;
-        /*
-        if (isInColor) {
-            result += " Movie is in color.";
-    }*/
-        return result;
+                + "\n" + "Director: " + director
+                + "\n" + "Year: " + year
+                + "\n" + "Colored: " + (isInColor ? "Yes" : "No")
+                + "\n" + "Length: " + lengthInMinutes
+                + "\n" + "Genre: " + genre;
+return result;
     }
 }
