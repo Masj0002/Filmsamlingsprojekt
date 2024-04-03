@@ -6,11 +6,11 @@ public class UserInterface {
     Scanner input = new Scanner(System.in);
 
     public void startMenu() {
-
+/*
         film.addMovie("DieHard","Lord Hard",2004, true, 20, "Action");
         film.addMovie("Lovepotion","Jacob Clienton",1992, false, 32, "Drama");
         film.addMovie("Shrek","hamder a", 2000,true,120,"horror");
-
+*/
         int sentinel = 5;
         int userChoice = 0;
         while (userChoice != sentinel) {
@@ -41,9 +41,10 @@ public class UserInterface {
     //Methods
     public void createMovie() {
         System.out.println("Please type in the title");
-        String title = input.next();
+        String title = input.nextLine();
+        input.nextLine();
         System.out.println("Please type in who directed it");
-        String director = input.next();
+        String director = input.nextLine();
         System.out.println("Please type in the year it was made");
         int year = input.nextInt();
 
